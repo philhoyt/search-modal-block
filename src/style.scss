@@ -5,150 +5,136 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-search-modal-block {
+.wp-block-ph-search-modal-block {
 	display: inline-flex;
-}
 
-.modal__overlay {
-	z-index: 9999;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background: rgba(0, 0, 0, 0.6);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	animation: fadeInOverlay 0.3s ease-in-out;
-}
-
-.modal__container {
-	background-color: #fff;
-	padding: 20px;
-	width: 100%;
-	max-width: 600px;
-	max-height: 100%;
-	margin-inline: 1rem;
-	border-radius: 4px;
-	overflow-y: auto;
-	box-sizing: border-box;
-	animation: fadeInContent 0.3s ease-in-out;
-}
-
-.modal__header {
-	display: flex;
-	justify-content: end;
-	align-items: center;
-}
-
-.modal__close {
-	background: transparent;
-	border: 0;
-	font-size: 1.5rem;
-	cursor: pointer;
-}
-
-.modal__close:before {
-	content: "\2715";
-}
-
-.modal__content {
-	padding-top: 1.5rem;
-	padding-bottom: 1.5rem;
-	line-height: 1.5;
-	color: rgba(0, 0, 0, 0.8);
-	form {
+	.modal__overlay {
+		z-index: 9999;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, 0.6);
 		display: flex;
-		align-items: stretch;
-		justify-content: stretch;
-		gap: .5rem;
-		input {
-			flex: 1;
-			padding: 0.5rem;
-			border-radius: 0.25rem;
-			font-size: 1.4rem;
+		justify-content: center;
+		align-items: center;
+		animation: fadeInOverlay 0.3s ease-in-out;
+	}
+
+	.modal__container {
+		background-color: #fff;
+		padding: 20px;
+		width: 100%;
+		max-width: 600px;
+		max-height: 100%;
+		margin-inline: 1rem;
+		border-radius: 4px;
+		overflow-y: auto;
+		box-sizing: border-box;
+		animation: fadeInContent 0.3s ease-in-out;
+	}
+
+	.modal__header {
+		display: flex;
+		justify-content: end;
+		align-items: center;
+	}
+
+	.modal__close {
+		background: transparent;
+		border: 0;
+		font-size: 1.5rem;
+		cursor: pointer;
+	}
+
+	.modal__close:before {
+		content: "\2715";
+	}
+
+	.modal__content {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+		line-height: 1.5;
+		color: rgba(0, 0, 0, 0.8);
+	}
+	
+	.micromodal-fade {
+		display: none;
+	}
+
+	.micromodal-fade.is-open {
+		display: block;
+	}
+
+	@keyframes fadeInOverlay {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
 		}
 	}
+
+	@keyframes fadeInContent {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes fadeOutOverlay {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+
+	@keyframes fadeOutContent {
+		from {
+			opacity: 1;
+		}
+		to {
+			opacity: 0;
+		}
+	}
+
+	.micromodal-fade[aria-hidden="false"] .modal__overlay {
+		animation: fadeInOverlay 0.3s ease-in-out;
+	}
+
+	.micromodal-fade[aria-hidden="false"] .modal__container {
+		animation: fadeInContent 0.3s ease-in-out;
+	}
+
+	.micromodal-fade[aria-hidden="true"] .modal__overlay {
+		animation: fadeOutOverlay 0.3s ease-in-out;
+	}
+
+	.micromodal-fade[aria-hidden="true"] .modal__container {
+		animation: fadeOutContent 0.3s ease-in-out;
+	}
 }
 
-.modal__btn {
-	font-size: 0.875rem;
-	padding: 0.5rem 1rem;
-	background-color: #e6e6e6;
-	color: rgba(0, 0, 0, 0.8);
+.flex-container {
+    display: flex;
+	gap: .5rem;
+}
+
+.flex-item-1 {
+    flex: 1;
+	display: flex;
+}
+
+.search-modal-input {
 	border-radius: 0.25rem;
-	border: none;
-	cursor: pointer;
-	transition: transform 0.25s ease-out;
-}
-
-.modal__btn:focus,
-.modal__btn:hover {
-	transform: scale(1.05);
-}
-
-.modal__btn-primary {
-	background-color: #00449e;
-	color: #fff;
-}
-
-.micromodal-fade {
-	display: none;
-}
-
-.micromodal-fade.is-open {
-	display: block;
-}
-
-@keyframes fadeInOverlay {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes fadeInContent {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-
-@keyframes fadeOutOverlay {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
-}
-
-@keyframes fadeOutContent {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
-}
-
-.micromodal-fade[aria-hidden="false"] .modal__overlay {
-	animation: fadeInOverlay 0.3s ease-in-out;
-}
-
-.micromodal-fade[aria-hidden="false"] .modal__container {
-	animation: fadeInContent 0.3s ease-in-out;
-}
-
-.micromodal-fade[aria-hidden="true"] .modal__overlay {
-	animation: fadeOutOverlay 0.3s ease-in-out;
-}
-
-.micromodal-fade[aria-hidden="true"] .modal__container {
-	animation: fadeOutContent 0.3s ease-in-out;
+	font-size: 1rem;
+	box-sizing: border-box;
+	width: 100%;
+	flex: 1;
+	text-indent: .5rem;
 }

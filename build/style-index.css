@@ -1,1 +1,129 @@
-.wp-block-create-block-search-modal-block{display:inline-flex}.modal__overlay{align-items:center;animation:fadeInOverlay .3s ease-in-out;background:rgba(0,0,0,.6);bottom:0;display:flex;justify-content:center;left:0;position:fixed;right:0;top:0;z-index:9999}.modal__container{animation:fadeInContent .3s ease-in-out;background-color:#fff;border-radius:4px;box-sizing:border-box;margin-inline:1rem;max-height:100%;max-width:600px;overflow-y:auto;padding:20px;width:100%}.modal__header{align-items:center;display:flex;justify-content:end}.modal__close{background:transparent;border:0;cursor:pointer;font-size:1.5rem}.modal__close:before{content:"✕"}.modal__content{color:rgba(0,0,0,.8);line-height:1.5;padding-bottom:1.5rem;padding-top:1.5rem}.modal__content form{align-items:stretch;display:flex;gap:.5rem;justify-content:stretch}.modal__content form input{border-radius:.25rem;flex:1;font-size:1.4rem;padding:.5rem}.modal__btn{background-color:#e6e6e6;border:none;border-radius:.25rem;color:rgba(0,0,0,.8);cursor:pointer;font-size:.875rem;padding:.5rem 1rem;transition:transform .25s ease-out}.modal__btn:focus,.modal__btn:hover{transform:scale(1.05)}.modal__btn-primary{background-color:#00449e;color:#fff}.micromodal-fade{display:none}.micromodal-fade.is-open{display:block}@keyframes fadeInOverlay{0%{opacity:0}to{opacity:1}}@keyframes fadeInContent{0%{opacity:0}to{opacity:1}}@keyframes fadeOutOverlay{0%{opacity:1}to{opacity:0}}@keyframes fadeOutContent{0%{opacity:1}to{opacity:0}}.micromodal-fade[aria-hidden=false] .modal__overlay{animation:fadeInOverlay .3s ease-in-out}.micromodal-fade[aria-hidden=false] .modal__container{animation:fadeInContent .3s ease-in-out}.micromodal-fade[aria-hidden=true] .modal__overlay{animation:fadeOutOverlay .3s ease-in-out}.micromodal-fade[aria-hidden=true] .modal__container{animation:fadeOutContent .3s ease-in-out}
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-ph-search-modal-block {
+  display: inline-flex;
+}
+.wp-block-ph-search-modal-block .modal__overlay {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+.wp-block-ph-search-modal-block .modal__container {
+  background-color: #fff;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 100%;
+  margin-inline: 1rem;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  animation: fadeInContent 0.3s ease-in-out;
+}
+.wp-block-ph-search-modal-block .modal__header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.wp-block-ph-search-modal-block .modal__close {
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.wp-block-ph-search-modal-block .modal__close:before {
+  content: "✕";
+}
+.wp-block-ph-search-modal-block .modal__content {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.8);
+}
+.wp-block-ph-search-modal-block .micromodal-fade {
+  display: none;
+}
+.wp-block-ph-search-modal-block .micromodal-fade.is-open {
+  display: block;
+}
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOutOverlay {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOutContent {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.wp-block-ph-search-modal-block .micromodal-fade[aria-hidden=false] .modal__overlay {
+  animation: fadeInOverlay 0.3s ease-in-out;
+}
+.wp-block-ph-search-modal-block .micromodal-fade[aria-hidden=false] .modal__container {
+  animation: fadeInContent 0.3s ease-in-out;
+}
+.wp-block-ph-search-modal-block .micromodal-fade[aria-hidden=true] .modal__overlay {
+  animation: fadeOutOverlay 0.3s ease-in-out;
+}
+.wp-block-ph-search-modal-block .micromodal-fade[aria-hidden=true] .modal__container {
+  animation: fadeOutContent 0.3s ease-in-out;
+}
+
+.flex-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.flex-item-1 {
+  flex: 1;
+  display: flex;
+}
+
+.search-modal-input {
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+  width: 100%;
+  flex: 1;
+  text-indent: 0.5rem;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

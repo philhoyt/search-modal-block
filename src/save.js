@@ -21,21 +21,25 @@ export default function Save() {
 							<button className="modal__close" aria-label="Close modal" data-micromodal-close></button>
 						</header>
 						<main className="modal__content" id="search-modal-content">
-							<form method="GET" action="/">
-								<input
-									type="text"
-									name="s"
-									className="search-modal-input"
-									placeholder="Search..."
-									required
-								/>
-								<button
-									type="submit"
-									className="modal__btn modal__btn-primary"
-									style={{ cursor: 'pointer' }}
-								>
-									Search
-								</button>
+							<form method="GET" class="flex-container" action="/">
+								<div class="flex-item-1">
+									<input
+										type="text"
+										name="s"
+										className="search-modal-input"
+										placeholder="Search..."
+										required
+									/>
+								</div>
+								<div class="flex-item-2">
+									<button
+										type="submit"
+										className="modal__btn modal__btn-primary"
+										style={{ cursor: 'pointer' }}
+									>
+										Search
+									</button>
+								</div>
 							</form>
 						</main>
 					</div>
