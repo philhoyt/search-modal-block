@@ -41,3 +41,9 @@ This section describes how to install the plugin and get it working.
 == Additional Information ==
 
 This block is built using the WordPress Create Block tool, ensuring compatibility with modern WordPress standards and practices. It is designed to be flexible, responsive, and accessible, providing a smooth user experience across different devices and screen readers.
+
+== Credits ==
+
+This plugin uses the following third-party libraries:
+
+- [MicroModal](https://micromodal.vercel.app/) - A lightweight, configurable modal library for web applications.
