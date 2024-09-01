@@ -90,20 +90,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/icon/index.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/search.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/icon/index.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/search.js");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
 
 
 
-function Edit() {
+
+function Edit({
+  attributes,
+  setAttributes,
+  clientId
+}) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)();
+
+  // Set blockId using clientId if it's not already set
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    if (!attributes.blockId) {
+      setAttributes({
+        blockId: clientId
+      });
+    }
+  }, [clientId]);
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }));
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "wp-block-ph-search-modal__button"
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_4__["default"]
+  })));
 }
 
 /***/ }),
@@ -181,19 +199,24 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Save() {
+function Save({
+  attributes
+}) {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save();
+  const {
+    blockId
+  } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "wp-block-ph-search-modal__button",
-    "data-micromodal-trigger": "search-modal",
+    "data-micromodal-trigger": blockId,
     "aria-label": "Open search modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"], {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"]
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "modal wp-block-ph-search-modal__fade",
-    id: "search-modal",
+    id: blockId,
     "aria-hidden": "true"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wp-block-ph-search-modal__overlay",
@@ -203,7 +226,7 @@ function Save() {
     className: "wp-block-ph-search-modal__container",
     role: "dialog",
     "aria-modal": "true",
-    "aria-labelledby": "search-modal-title"
+    "aria-labelledby": `${blockId}-title`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {
     className: "wp-block-ph-search-modal__header"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
@@ -212,16 +235,16 @@ function Save() {
     "data-micromodal-close": true
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("main", {
     className: "wp-block-ph-search-modal__content",
-    id: "search-modal-content"
+    id: `${blockId}-content`
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
     method: "GET",
-    class: "wp-block-ph-search-modal__form wp-block-search",
+    className: "wp-block-ph-search-modal__form wp-block-search",
     action: "/"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    class: "screen-reader-text",
-    for: "search-modal-input"
+    className: "screen-reader-text",
+    htmlFor: `${blockId}-input`
   }, "Search"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    id: "search-modal-input",
+    id: `${blockId}-input`,
     type: "text",
     name: "s",
     className: "wp-block-ph-search-modal__form-input wp-block-search__input",

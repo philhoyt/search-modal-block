@@ -1,14 +1,15 @@
 import { Icon, search } from '@wordpress/icons';
 import { useBlockProps } from '@wordpress/block-editor';
 
-export default function Save() {
+export default function Save({ attributes }) {
 	const blockProps = useBlockProps.save();
+	const { blockId } = attributes;
 
 	return (
 		<div { ...blockProps }>
 			<button
 				className="wp-block-ph-search-modal__button"
-				data-micromodal-trigger="search-modal"
+				data-micromodal-trigger={ blockId }
 				aria-label="Open search modal"
 			>
 				<Icon icon={ search } />
@@ -16,7 +17,7 @@ export default function Save() {
 
 			<div
 				className="modal wp-block-ph-search-modal__fade"
-				id="search-modal"
+				id={ blockId }
 				aria-hidden="true"
 			>
 				<div
@@ -28,31 +29,32 @@ export default function Save() {
 						className="wp-block-ph-search-modal__container"
 						role="dialog"
 						aria-modal="true"
-						aria-labelledby="search-modal-title"
+						aria-labelledby={`${blockId}-title`}
 					>
 						<header className="wp-block-ph-search-modal__header">
 							<button
 								className="wp-block-ph-search-modal__close-button"
 								aria-label="Close modal"
 								data-micromodal-close
-								></button>
+							></button>
 						</header>
 						<main
 							className="wp-block-ph-search-modal__content"
-							id="search-modal-content"
+							id={`${blockId}-content`}
 						>
 							<form
 								method="GET"
-								class="wp-block-ph-search-modal__form wp-block-search"
+								className="wp-block-ph-search-modal__form wp-block-search"
 								action="/"
 							>
 								<label
-								class="screen-reader-text"
-								for="search-modal-input">
+									className="screen-reader-text"
+									htmlFor={`${blockId}-input`}
+								>
 									Search
 								</label>
 								<input
-									id="search-modal-input"
+									id={`${blockId}-input`}
 									type="text"
 									name="s"
 									className="wp-block-ph-search-modal__form-input wp-block-search__input"
