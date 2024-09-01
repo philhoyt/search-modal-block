@@ -20,6 +20,18 @@
     "blockId": {
       "type": "string",
       "default": ""
+    },
+    "placeholderText": {
+      "type": "string",
+      "default": "Search..."
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Search"
+    },
+    "labelText": {
+      "type": "string",
+      "default": "Search for:"
     }
   },
   "textdomain": "search-modal-block",
