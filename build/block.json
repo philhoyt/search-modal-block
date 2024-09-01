@@ -6,10 +6,21 @@
   "title": "Search Modal Block",
   "category": "widgets",
   "icon": "search",
-  "description": "Example block scaffolded with Create Block tool.",
+  "description": "A search modal.",
+  "keywords": [
+    "search",
+    "modal",
+    "popup"
+  ],
   "example": {},
   "supports": {
     "html": false
+  },
+  "attributes": {
+    "blockId": {
+      "type": "string",
+      "default": ""
+    }
   },
   "textdomain": "search-modal-block",
   "editorScript": "file:./index.js",

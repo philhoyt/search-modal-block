@@ -26,6 +26,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		color: inherit;
+		svg {
+			fill: currentColor;
+		}
 	}
 
 	&__overlay {

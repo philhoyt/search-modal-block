@@ -28,6 +28,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  color: inherit;
+}
+.wp-block-ph-search-modal__button svg {
+  fill: currentColor;
 }
 .wp-block-ph-search-modal__overlay {
   z-index: 9999;

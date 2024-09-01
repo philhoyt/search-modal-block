@@ -1664,7 +1664,7 @@ module.exports = window["wp"]["primitives"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ph/search-modal","version":"0.1.0","title":"Search Modal Block","category":"widgets","icon":"search","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"search-modal-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ph/search-modal","version":"0.1.0","title":"Search Modal Block","category":"widgets","icon":"search","description":"A search modal.","keywords":["search","modal","popup"],"example":{},"supports":{"html":false},"attributes":{"blockId":{"type":"string","default":""}},"textdomain":"search-modal-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 
