@@ -7,5 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
         disableScroll: true,
         awaitOpenAnimation: true,
         awaitCloseAnimation: true,
+		openClass: 'is-open',
     });
 });

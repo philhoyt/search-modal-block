@@ -186,58 +186,54 @@ function Save() {
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "search-modal-button",
+    className: "wp-block-ph-search-modal__button",
     "data-micromodal-trigger": "search-modal",
-    style: {
-      background: 'none',
-      border: 'none',
-      cursor: 'pointer'
-    }
+    "aria-label": "Open search modal"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"], {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_3__["default"]
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "modal micromodal-fade",
+    className: "modal wp-block-ph-search-modal__fade",
     id: "search-modal",
     "aria-hidden": "true"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "modal__overlay",
+    className: "wp-block-ph-search-modal__overlay",
     tabIndex: "-1",
     "data-micromodal-close": true
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "modal__container",
+    className: "wp-block-ph-search-modal__container",
     role: "dialog",
     "aria-modal": "true",
     "aria-labelledby": "search-modal-title"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("header", {
-    className: "modal__header"
+    className: "wp-block-ph-search-modal__header"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "modal__close",
+    className: "wp-block-ph-search-modal__close-button",
     "aria-label": "Close modal",
     "data-micromodal-close": true
   })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("main", {
-    className: "modal__content",
+    className: "wp-block-ph-search-modal__content",
     id: "search-modal-content"
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
     method: "GET",
-    class: "flex-container",
+    class: "wp-block-ph-search-modal__form wp-block-search",
     action: "/"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "flex-item-1"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    class: "screen-reader-text",
+    for: "search-modal-input"
+  }, "Search"), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    id: "search-modal-input",
     type: "text",
     name: "s",
-    className: "search-modal-input",
+    className: "wp-block-ph-search-modal__form-input wp-block-search__input",
     placeholder: "Search...",
     required: true
-  })), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "flex-item-2"
-  }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     type: "submit",
-    className: "modal__btn modal__btn-primary",
+    className: "wp-block-ph-search-modal__form-button wp-block-button__link",
     style: {
       cursor: 'pointer'
     }
-  }, "Search"))))))));
+  }, "Search")))))));
 }
 
 /***/ }),
@@ -1668,7 +1664,7 @@ module.exports = window["wp"]["primitives"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ph/search-modal-block","version":"0.1.0","title":"Search Modal Block","category":"widgets","icon":"search","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"search-modal-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"ph/search-modal","version":"0.1.0","title":"Search Modal Block","category":"widgets","icon":"search","description":"Example block scaffolded with Create Block tool.","example":{},"supports":{"html":false},"textdomain":"search-modal-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js"}');
 
 /***/ })
 

@@ -2,29 +2,44 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style.scss ***!
   \***************************************************************************************************************************************************************************************************************************************/
 @charset "UTF-8";
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-.wp-block-ph-search-modal-block {
-  display: inline-flex;
+@keyframes ph-search-modal__fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.wp-block-ph-search-modal-block .modal__overlay {
+@keyframes ph-search-modal__fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.wp-block-ph-search-modal {
+  display: flex;
+}
+.wp-block-ph-search-modal__button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wp-block-ph-search-modal__overlay {
   z-index: 9999;
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: fadeInOverlay 0.3s ease-in-out;
+  animation: ph-search-modal__fade-in 0.3s ease-in-out;
 }
-.wp-block-ph-search-modal-block .modal__container {
+.wp-block-ph-search-modal__container {
   background-color: #fff;
   padding: 20px;
   width: 100%;
@@ -34,96 +49,52 @@
   border-radius: 4px;
   overflow-y: auto;
   box-sizing: border-box;
-  animation: fadeInContent 0.3s ease-in-out;
+  animation: ph-search-modal__fade-in 0.3s ease-in-out;
 }
-.wp-block-ph-search-modal-block .modal__header {
+.wp-block-ph-search-modal__header {
   display: flex;
   justify-content: end;
   align-items: center;
 }
-.wp-block-ph-search-modal-block .modal__close {
+.wp-block-ph-search-modal__close-button {
   background: transparent;
   border: 0;
   font-size: 1.5rem;
   cursor: pointer;
 }
-.wp-block-ph-search-modal-block .modal__close:before {
+.wp-block-ph-search-modal__close-button:before {
   content: "✕";
 }
-.wp-block-ph-search-modal-block .modal__content {
+.wp-block-ph-search-modal__content {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.8);
 }
-.wp-block-ph-search-modal-block .micromodal-fade {
-  display: none;
-}
-.wp-block-ph-search-modal-block .micromodal-fade.is-open {
-  display: block;
-}
-@keyframes fadeInOverlay {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeInContent {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fadeOutOverlay {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-@keyframes fadeOutContent {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-.wp-block-ph-search-modal-block .micromodal-fade[aria-hidden=false] .modal__overlay {
-  animation: fadeInOverlay 0.3s ease-in-out;
-}
-.wp-block-ph-search-modal-block .micromodal-fade[aria-hidden=false] .modal__container {
-  animation: fadeInContent 0.3s ease-in-out;
-}
-.wp-block-ph-search-modal-block .micromodal-fade[aria-hidden=true] .modal__overlay {
-  animation: fadeOutOverlay 0.3s ease-in-out;
-}
-.wp-block-ph-search-modal-block .micromodal-fade[aria-hidden=true] .modal__container {
-  animation: fadeOutContent 0.3s ease-in-out;
-}
-
-.flex-container {
+.wp-block-ph-search-modal__form {
   display: flex;
   gap: 0.5rem;
 }
-
-.flex-item-1 {
+.wp-block-ph-search-modal__form-input {
   flex: 1;
   display: flex;
-}
-
-.search-modal-input {
-  border-radius: 0.25rem;
-  font-size: 1rem;
   box-sizing: border-box;
+  font-size: 1rem;
   width: 100%;
   flex: 1;
   text-indent: 0.5rem;
+}
+.wp-block-ph-search-modal__fade {
+  display: none;
+}
+.wp-block-ph-search-modal__fade.is-open {
+  display: block;
+}
+.wp-block-ph-search-modal__fade[aria-hidden=false] .wp-block-ph-search-modal__overlay, .wp-block-ph-search-modal__fade[aria-hidden=false] .wp-block-ph-search-modal__container {
+  animation: ph-search-modal__fade-in 0.3s ease-in-out;
+}
+.wp-block-ph-search-modal__fade[aria-hidden=true] .wp-block-ph-search-modal__overlay, .wp-block-ph-search-modal__fade[aria-hidden=true] .wp-block-ph-search-modal__container {
+  animation: ph-search-modal__fade-out 0.3s ease-in-out;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

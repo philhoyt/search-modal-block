@@ -1,28 +1,45 @@
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
+@keyframes ph-search-modal__fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
 
-.wp-block-ph-search-modal-block {
-	display: inline-flex;
+@keyframes ph-search-modal__fade-out {
+	from {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
 
-	.modal__overlay {
+.wp-block-ph-search-modal {
+	display: flex;
+
+	&__button {
+		background: none;
+		border: 0;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__overlay {
 		z-index: 9999;
 		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		inset: 0;
 		background: rgba(0, 0, 0, 0.6);
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		animation: fadeInOverlay 0.3s ease-in-out;
+		animation: ph-search-modal__fade-in 0.3s ease-in-out;
 	}
 
-	.modal__container {
+	&__container {
 		background-color: #fff;
 		padding: 20px;
 		width: 100%;
@@ -32,109 +49,67 @@
 		border-radius: 4px;
 		overflow-y: auto;
 		box-sizing: border-box;
-		animation: fadeInContent 0.3s ease-in-out;
+		animation: ph-search-modal__fade-in 0.3s ease-in-out;
 	}
 
-	.modal__header {
+	&__header {
 		display: flex;
 		justify-content: end;
 		align-items: center;
 	}
 
-	.modal__close {
+	&__close-button {
 		background: transparent;
 		border: 0;
 		font-size: 1.5rem;
 		cursor: pointer;
 	}
 
-	.modal__close:before {
+	&__close-button:before {
 		content: "\2715";
 	}
 
-	.modal__content {
+	&__content {
 		padding-top: 1.5rem;
 		padding-bottom: 1.5rem;
 		line-height: 1.5;
 		color: rgba(0, 0, 0, 0.8);
 	}
+
+	&__form {
+		display: flex;
+		gap: .5rem;
+	}
+
+	&__form-input {
+		flex: 1;
+		display: flex;
+		box-sizing: border-box;
+		font-size: 1rem;
+		width: 100%;
+		flex: 1;
+		text-indent: .5rem;
+	}
+
+	&__form-button {
+		
+	}
 	
-	.micromodal-fade {
+	&__fade {
 		display: none;
-	}
 
-	.micromodal-fade.is-open {
-		display: block;
-	}
+		&.is-open {
+			display: block;
+		}
 
-	@keyframes fadeInOverlay {
-		from {
-			opacity: 0;
+		&[aria-hidden="false"] .wp-block-ph-search-modal__overlay,
+		&[aria-hidden="false"] .wp-block-ph-search-modal__container {
+			animation: ph-search-modal__fade-in 0.3s ease-in-out;
 		}
-		to {
-			opacity: 1;
-		}
-	}
 
-	@keyframes fadeInContent {
-		from {
-			opacity: 0;
-		}
-		to {
-			opacity: 1;
+		&[aria-hidden="true"] .wp-block-ph-search-modal__overlay,
+		&[aria-hidden="true"] .wp-block-ph-search-modal__container {
+			animation: ph-search-modal__fade-out 0.3s ease-in-out;
 		}
 	}
-
-	@keyframes fadeOutOverlay {
-		from {
-			opacity: 1;
-		}
-		to {
-			opacity: 0;
-		}
-	}
-
-	@keyframes fadeOutContent {
-		from {
-			opacity: 1;
-		}
-		to {
-			opacity: 0;
-		}
-	}
-
-	.micromodal-fade[aria-hidden="false"] .modal__overlay {
-		animation: fadeInOverlay 0.3s ease-in-out;
-	}
-
-	.micromodal-fade[aria-hidden="false"] .modal__container {
-		animation: fadeInContent 0.3s ease-in-out;
-	}
-
-	.micromodal-fade[aria-hidden="true"] .modal__overlay {
-		animation: fadeOutOverlay 0.3s ease-in-out;
-	}
-
-	.micromodal-fade[aria-hidden="true"] .modal__container {
-		animation: fadeOutContent 0.3s ease-in-out;
-	}
-}
-
-.flex-container {
-    display: flex;
-	gap: .5rem;
-}
-
-.flex-item-1 {
-    flex: 1;
-	display: flex;
-}
-
-.search-modal-input {
-	border-radius: 0.25rem;
-	font-size: 1rem;
-	box-sizing: border-box;
-	width: 100%;
-	flex: 1;
-	text-indent: .5rem;
 }

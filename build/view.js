@@ -86,7 +86,8 @@ document.addEventListener('DOMContentLoaded', () => {
     closeTrigger: 'data-micromodal-close',
     disableScroll: true,
     awaitOpenAnimation: true,
-    awaitCloseAnimation: true
+    awaitCloseAnimation: true,
+    openClass: 'is-open'
   });
 });
 /******/ })()
