@@ -3,7 +3,7 @@
  * Plugin Name:       Search Modal Block
  * Description:       Responsive search modal block.
  * Requires at least: 6.1
- * Requires PHP:      7.0
+ * Requires PHP:      7.3
  * Version:           0.1.0
  * Author:            Phil Hoyt
  * Author URI:        https://philhoyt.com
