@@ -61,13 +61,15 @@ export default function Save({ attributes }) {
 									required
 								/>
 								
-								<button
-									type="submit"
-									className="wp-block-ph-search-modal__form-button wp-block-button__link"
-									style={{ cursor: 'pointer' }}
-								>
-									{ buttonText }
-								</button>
+								<div className="wp-block-button">
+									<button
+										type="submit"
+										className="wp-block-ph-search-modal__form-button wp-block-button__link"
+										style={{ cursor: 'pointer' }}
+									>
+										{ buttonText }
+									</button>
+								</div>
 							</form>
 						</main>
 					</div>
