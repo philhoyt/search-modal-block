@@ -1,0 +1,28 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"login": true,
+	"steps": [
+		{
+			"step": "installPlugin",
+			"pluginZipFile": {
+				"resource": "url",
+				"url": "https://github-proxy.com/proxy/?repo=philhoyt/search-modal-block&branch=main"
+			}
+		},
+		{
+			"step": "installTheme",
+			"themeZipFile": {
+				"resource": "wordpress.org/themes",
+				"slug": "twentytwentyfour"
+			}
+		},
+		{
+			"step": "importWxr",
+			"file": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/philhoyt/search-modal-block/main/_playground/demo-content.xml"
+			}
+		}
+	]
+}
