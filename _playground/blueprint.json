@@ -4,6 +4,12 @@
 	"login": true,
 	"steps": [
 		{
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "Search Mobal Block"
+			}
+		},
+		{
 			"step": "installPlugin",
 			"pluginZipFile": {
 				"resource": "url",
