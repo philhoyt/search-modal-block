@@ -13,7 +13,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		if ( ! blockId ) {
 			setAttributes( { blockId: clientId } );
 		}
-	}, [ clientId ] );
+	}, [ clientId, blockId, setAttributes ] );
 
 	return (
 		<>
