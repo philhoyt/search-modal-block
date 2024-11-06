@@ -1,11 +1,12 @@
 import { __ } from '@wordpress/i18n';
 import { Icon, search } from '@wordpress/icons';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, TextControl } from '@wordpress/components';
+import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
-	const { blockId, placeholderText, buttonText, labelText } = attributes;
+	const { blockId, placeholderText, buttonText, labelText, showLabel } =
+		attributes;
 	const blockProps = useBlockProps();
 
 	useEffect( () => {
@@ -42,6 +43,13 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						value={ labelText }
 						onChange={ ( value ) =>
 							setAttributes( { labelText: value } )
+						}
+					/>
+					<ToggleControl
+						label={ __( 'Show Label', 'search-modal-block' ) }
+						checked={ showLabel }
+						onChange={ ( value ) =>
+							setAttributes( { showLabel: value } )
 						}
 					/>
 				</PanelBody>

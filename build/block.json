@@ -32,6 +32,10 @@
     "labelText": {
       "type": "string",
       "default": "Search for:"
+    },
+    "showLabel": {
+      "type": "boolean",
+      "default": false
     }
   },
   "textdomain": "search-modal-block",

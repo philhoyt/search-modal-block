@@ -2,7 +2,8 @@ import { Icon, search } from '@wordpress/icons';
 import { useBlockProps } from '@wordpress/block-editor';
 
 export default function Save( { attributes } ) {
-	const { blockId, placeholderText, buttonText, labelText } = attributes;
+	const { blockId, placeholderText, buttonText, labelText, showLabel } =
+		attributes;
 	const blockProps = useBlockProps.save();
 
 	return (
@@ -48,28 +49,31 @@ export default function Save( { attributes } ) {
 								action="/"
 							>
 								<label
-									className="screen-reader-text"
+									className={
+										showLabel ? '' : 'screen-reader-text'
+									}
 									htmlFor={ `${ blockId }-input` }
 								>
 									{ labelText }
 								</label>
-								<input
-									id={ `${ blockId }-input` }
-									type="text"
-									name="s"
-									className="wp-block-ph-search-modal__form-input wp-block-search__input"
-									placeholder={ placeholderText }
-									required
-								/>
-
-								<div className="wp-block-button">
-									<button
-										type="submit"
-										className="wp-block-ph-search-modal__form-button wp-block-button__link"
-										style={ { cursor: 'pointer' } }
-									>
-										{ buttonText }
-									</button>
+								<div className="wp-block-ph-search-modal__form-controls">
+									<input
+										id={ `${ blockId }-input` }
+										type="text"
+										name="s"
+										className="wp-block-ph-search-modal__form-input wp-block-search__input"
+										placeholder={ placeholderText }
+										required
+									/>
+									<div className="wp-block-button">
+										<button
+											type="submit"
+											className="wp-block-ph-search-modal__form-button wp-block-button__link"
+											style={ { cursor: 'pointer' } }
+										>
+											{ buttonText }
+										</button>
+									</div>
 								</div>
 							</form>
 						</main>
