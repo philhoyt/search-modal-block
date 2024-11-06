@@ -1,7 +1,7 @@
 import { Icon, search } from '@wordpress/icons';
 import { useBlockProps } from '@wordpress/block-editor';
 
-export default function Save({ attributes }) {
+export default function Save( { attributes } ) {
 	const { blockId, placeholderText, buttonText, labelText } = attributes;
 	const blockProps = useBlockProps.save();
 
@@ -29,7 +29,7 @@ export default function Save({ attributes }) {
 						className="wp-block-ph-search-modal__container"
 						role="dialog"
 						aria-modal="true"
-						aria-labelledby={`${blockId}-title`}
+						aria-labelledby={ `${ blockId }-title` }
 					>
 						<header className="wp-block-ph-search-modal__header">
 							<button
@@ -40,7 +40,7 @@ export default function Save({ attributes }) {
 						</header>
 						<main
 							className="wp-block-ph-search-modal__content"
-							id={`${blockId}-content`}
+							id={ `${ blockId }-content` }
 						>
 							<form
 								method="GET"
@@ -49,23 +49,24 @@ export default function Save({ attributes }) {
 							>
 								<label
 									className="screen-reader-text"
-									htmlFor={`${blockId}-input`}>
+									htmlFor={ `${ blockId }-input` }
+								>
 									{ labelText }
 								</label>
 								<input
-									id={`${blockId}-input`}
+									id={ `${ blockId }-input` }
 									type="text"
 									name="s"
 									className="wp-block-ph-search-modal__form-input wp-block-search__input"
 									placeholder={ placeholderText }
 									required
 								/>
-								
+
 								<div className="wp-block-button">
 									<button
 										type="submit"
 										className="wp-block-ph-search-modal__form-button wp-block-button__link"
-										style={{ cursor: 'pointer' }}
+										style={ { cursor: 'pointer' } }
 									>
 										{ buttonText }
 									</button>

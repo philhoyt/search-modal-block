@@ -1,0 +1,19 @@
+{
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+    "stylelint.validate": [
+        "css",
+        "scss"
+    ],
+    "css.validate": false,
+    "scss.validate": false,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact"
+    ],
+    "javascript.validate.enable": false
+} 
