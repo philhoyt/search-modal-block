@@ -1,19 +1,13 @@
 {
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": "explicit",
-        "source.fixAll.stylelint": "explicit"
-    },
-    "stylelint.validate": [
-        "css",
-        "scss"
-    ],
-    "css.validate": false,
-    "scss.validate": false,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-    "eslint.validate": [
-        "javascript",
-        "javascriptreact"
-    ],
-    "javascript.validate.enable": false
-} 
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "explicit",
+		"source.fixAll.stylelint": "explicit"
+	},
+	"stylelint.validate": [ "css", "scss" ],
+	"css.validate": false,
+	"scss.validate": false,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"eslint.validate": [ "javascript", "javascriptreact" ],
+	"javascript.validate.enable": false
+}

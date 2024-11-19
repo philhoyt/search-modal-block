@@ -7,7 +7,7 @@
 	"category": "widgets",
 	"icon": "search",
 	"description": "A search modal.",
-	"keywords": ["search", "modal", "popup"],
+	"keywords": [ "search", "modal", "popup" ],
 	"example": {},
 	"supports": {
 		"html": false
