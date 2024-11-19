@@ -1,7 +1,7 @@
 {
 	"name": "search-modal-block",
-	"version": "0.1.0",
-	"description": "Responsive search modal block.",
+	"version": "1.0.0",
+	"description": "A customizable search modal block that adds an elegant and accessible search experience to your WordPress site.",
 	"author": "Phil Hoyt",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",

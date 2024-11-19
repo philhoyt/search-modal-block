@@ -2,11 +2,11 @@
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "ph/search-modal",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"title": "Search Modal Block",
 	"category": "widgets",
 	"icon": "search",
-	"description": "A search modal.",
+	"description": "Add an elegant popup search interface to your site with customizable text and accessible design.",
 	"keywords": [ "search", "modal", "popup" ],
 	"example": {},
 	"supports": {

@@ -1,5 +1,5 @@
 # Search Modal Block
-[![Playground Demo Link](https://img.shields.io/badge/Playground_Demo-v0.1.1-blue?logo=wordpress&logoColor=%23fff&labelColor=%233858e9&color=%233858e9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/search-modal-block/main/_playground/blueprint.json)
+[![Playground Demo Link](https://img.shields.io/badge/Playground_Demo-v1.0.0-blue?logo=wordpress&logoColor=%23fff&labelColor=%233858e9&color=%233858e9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/search-modal-block/main/_playground/blueprint.json)
 
 A search modal block for WordPress.
 

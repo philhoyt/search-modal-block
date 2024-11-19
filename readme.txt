@@ -1,32 +1,49 @@
 === Search Modal Block ===
-Contributors:      Phil Hoyt
-Tags:              block, search, modal, Gutenberg
+Contributors:      philhoyt
+Tags:              block, search, modal, gutenberg, search form, popup search
 Requires at least: 6.1
 Tested up to:      6.6.1
-Stable tag:        0.1.1
+Stable tag:        1.0.0
+Requires PHP:      7.3
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A customizable search modal block for Gutenberg.
+A customizable search modal block that adds an elegant and accessible search experience to your WordPress site.
 
 == Description ==
 
-The Search Modal Block is a Gutenberg block that adds a search modal to your WordPress site.
+The Search Modal Block enhances your WordPress site with a modern, popup search interface that's both beautiful and functional. Built specifically for the block editor (Gutenberg), it provides a seamless way to add search functionality to any part of your content.
 
-**Features:**
+**Key Features:**
 
-- Customizable placeholder text for the search input field.
-- Customizable button text.
-- Customizable label text for screen readers.
-- Responsive and accessible design.
+* Clean, minimal design that works with any theme
+* Fully responsive layout
+* Accessibility-ready with ARIA labels and keyboard navigation
+* Customizable text elements:
+  * Search input placeholder
+  * Search button text
+  * Screen reader labels
+* Focus-visible support for better keyboard navigation
+* Seamless integration with WordPress search
+
+**Perfect For:**
+
+* Minimalist themes needing an elegant search solution
+* Sites wanting to improve their search UX
+* Accessibility-focused websites
+* Any WordPress site using the block editor
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
-
-1. Upload the plugin files to the `/wp-content/plugins/search-modal-block` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress.
 3. Go to the block editor and search for "Search Modal Block" in the block inserter to add it to your content.
+
+== Frequently Asked Questions ==
+
+= How do I customize the search button appearance? =
+
+The search button inherits your theme's colors by default. You can customize its appearance using your theme's custom CSS or the WordPress site editor.
 
 == Screenshots ==
 
@@ -35,8 +52,17 @@ This section describes how to install the plugin and get it working.
 
 == Changelog ==
 
-= 0.1.0 =
-* Initial release.
+= 1.0.0 =
+* Initial release with search modal block functionality
+* Customizable placeholder text, button text, and label text
+* Responsive and accessible design
+* Integration with WordPress search functionality
+* Focus-visible support for enhanced keyboard navigation
+
+== Upgrade Notice ==
+
+= 1.0.0 =
+Initial release of the Search Modal Block. Adds a customizable search modal to your WordPress site.
 
 == Additional Information ==
 
@@ -46,4 +72,4 @@ This block is built using the WordPress Create Block tool, ensuring compatibilit
 
 This plugin uses the following third-party libraries:
 
-- [MicroModal](https://micromodal.vercel.app/) - A lightweight, configurable modal library for web applications.
+* [MicroModal](https://micromodal.vercel.app/) - A lightweight, configurable modal library for web applications.
