@@ -1,8 +1,8 @@
 === Search Modal Block ===
 Contributors:      philhoyt
-Tags:              block, search, modal, gutenberg, search form, popup search
+Tags:              block, search, modal, search form, popup search
 Requires at least: 6.1
-Tested up to:      6.6.1
+Tested up to:      6.7
 Stable tag:        1.0.0
 Requires PHP:      7.3
 License:           GPL-2.0-or-later
