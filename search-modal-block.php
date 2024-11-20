@@ -5,7 +5,7 @@
  * Description:       Responsive search modal block.
  * Requires at least: 6.1
  * Requires PHP:      7.3
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Phil Hoyt
  * Author URI:        https://philhoyt.com
  * License:           GPL-2.0-or-later
@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.
  *
- * @since 1.0.0
+ * @since 1.0.1
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  * @return void

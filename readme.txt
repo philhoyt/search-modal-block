@@ -4,7 +4,7 @@ Tags:              block, search, modal, search form, popup search
 Requires at least: 6.1
 Tested up to:      6.7
 Stable tag:        1.0.0
-Requires PHP:      7.3
+Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -52,21 +52,16 @@ The search button inherits your theme's colors by default. You can customize its
 
 == Changelog ==
 
+= 1.0.1 =
+* Include assets for .org
+* Include src for .org
+
 = 1.0.0 =
 * Initial release with search modal block functionality
 * Customizable placeholder text, button text, and label text
 * Responsive and accessible design
 * Integration with WordPress search functionality
 * Focus-visible support for enhanced keyboard navigation
-
-== Upgrade Notice ==
-
-= 1.0.0 =
-Initial release of the Search Modal Block. Adds a customizable search modal to your WordPress site.
-
-== Additional Information ==
-
-This block is built using the WordPress Create Block tool, ensuring compatibility with modern WordPress standards and practices. It is designed to be flexible, responsive, and accessible, providing a smooth user experience across different devices and screen readers.
 
 == Credits ==
 
