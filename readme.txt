@@ -50,6 +50,30 @@ The search button inherits your theme's colors by default. You can customize its
 1. The search modal block in the block editor with customizable settings.
 2. The search modal displayed on the frontend after being triggered by the search icon.
 
+== Development ==
+
+This block is built using the WordPress Create Block tool, ensuring compatibility with modern WordPress standards and practices. The source code is available in the plugin's `/src` directory.
+
+= Building from Source =
+
+To build the plugin from source:
+
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run `npm run build` to build the production files
+4. For development, use `npm run start` to start the development server
+
+The build process uses @wordpress/scripts to compile and minify the JavaScript and CSS files. The source code for the compiled files in the `/build` directory can be found in the `/src` directory.
+
+= Development Dependencies =
+
+* @wordpress/scripts: ^27.9.0
+* @wordpress/eslint-plugin: ^21.4.0
+* @wordpress/stylelint-config: ^21.41.0
+* eslint: ^8.57.1
+
+The complete source code is available on GitHub: https://github.com/philhoyt/search-modal-block
+
 == Changelog ==
 
 = 1.0.1 =
