@@ -7,12 +7,12 @@ import {
 	MediaUploadCheck,
 } from '@wordpress/block-editor';
 import {
-	PanelBody,
 	TextControl,
 	ToggleControl,
 	Button,
 	__experimentalUnitControl as UnitControl,
 	__experimentalUseCustomUnits as useCustomUnits,
+	__experimentalToolsPanel as ToolsPanel,
 	__experimentalToolsPanelItem as ToolsPanelItem,
 	ButtonGroup,
 } from '@wordpress/components';
@@ -96,42 +96,138 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody
-					title={ __(
-						'Search Modal Settings',
-						'search-modal-block'
-					) }
+				<ToolsPanel
+					label={ __( 'Modal Settings', 'search-modal-block' ) }
+					resetAll={ () => {
+						setAttributes( {
+							placeholderText: __(
+								'Search…',
+								'search-modal-block'
+							),
+							buttonText: __( 'Search', 'search-modal-block' ),
+							labelText: __(
+								'Open search',
+								'search-modal-block'
+							),
+							showLabel: false,
+						} );
+					} }
 				>
-					<TextControl
+					<ToolsPanelItem
+						hasValue={ () =>
+							placeholderText !==
+							__( 'Search…', 'search-modal-block' )
+						}
 						label={ __( 'Placeholder Text', 'search-modal-block' ) }
-						value={ placeholderText }
-						onChange={ ( value ) =>
-							setAttributes( { placeholderText: value } )
+						isShownByDefault
+						onDeselect={ () =>
+							setAttributes( {
+								placeholderText: __(
+									'Search…',
+									'search-modal-block'
+								),
+							} )
 						}
-					/>
-					<TextControl
+					>
+						<TextControl
+							__nextHasNoMarginBottom
+							label={ __(
+								'Placeholder Text',
+								'search-modal-block'
+							) }
+							value={ placeholderText }
+							onChange={ ( value ) =>
+								setAttributes( { placeholderText: value } )
+							}
+						/>
+					</ToolsPanelItem>
+
+					<ToolsPanelItem
+						hasValue={ () =>
+							buttonText !== __( 'Search', 'search-modal-block' )
+						}
 						label={ __( 'Button Text', 'search-modal-block' ) }
-						value={ buttonText }
-						onChange={ ( value ) =>
-							setAttributes( { buttonText: value } )
+						isShownByDefault
+						onDeselect={ () =>
+							setAttributes( {
+								buttonText: __(
+									'Search',
+									'search-modal-block'
+								),
+							} )
 						}
-					/>
-					<TextControl
+					>
+						<TextControl
+							__nextHasNoMarginBottom
+							label={ __( 'Button Text', 'search-modal-block' ) }
+							value={ buttonText }
+							onChange={ ( value ) =>
+								setAttributes( { buttonText: value } )
+							}
+						/>
+					</ToolsPanelItem>
+
+					<ToolsPanelItem
+						hasValue={ () =>
+							labelText !==
+							__( 'Open search', 'search-modal-block' )
+						}
 						label={ __( 'Label Text', 'search-modal-block' ) }
-						value={ labelText }
-						onChange={ ( value ) =>
-							setAttributes( { labelText: value } )
+						isShownByDefault
+						onDeselect={ () =>
+							setAttributes( {
+								labelText: __(
+									'Open search',
+									'search-modal-block'
+								),
+							} )
 						}
-					/>
-					<ToggleControl
+					>
+						<TextControl
+							__nextHasNoMarginBottom
+							label={ __( 'Label Text', 'search-modal-block' ) }
+							value={ labelText }
+							onChange={ ( value ) =>
+								setAttributes( { labelText: value } )
+							}
+						/>
+					</ToolsPanelItem>
+
+					<ToolsPanelItem
+						hasValue={ () => showLabel !== false }
 						label={ __( 'Show Label', 'search-modal-block' ) }
-						checked={ showLabel }
-						onChange={ ( value ) =>
-							setAttributes( { showLabel: value } )
+						isShownByDefault
+						onDeselect={ () =>
+							setAttributes( { showLabel: false } )
 						}
-					/>
-					<div className="search-modal-icon-settings">
-						<p>{ __( 'Button Icon', 'search-modal-block' ) }</p>
+					>
+						<ToggleControl
+							__nextHasNoMarginBottom
+							label={ __( 'Show Label', 'search-modal-block' ) }
+							checked={ showLabel }
+							onChange={ ( value ) =>
+								setAttributes( { showLabel: value } )
+							}
+						/>
+					</ToolsPanelItem>
+				</ToolsPanel>
+
+				<ToolsPanel
+					label={ __( 'Icon Settings', 'search-modal-block' ) }
+					resetAll={ () => {
+						setAttributes( {
+							iconUrl: '',
+							iconSize: ICON_SIZE_OPTIONS.medium,
+						} );
+						setIsCustomSize( false );
+					} }
+				>
+					<ToolsPanelItem
+						hasValue={ () => !! iconUrl }
+						label={ __( 'Button Icon', 'search-modal-block' ) }
+						isShownByDefault
+						onDeselect={ () => setAttributes( { iconUrl: '' } ) }
+					>
 						<MediaUploadCheck>
 							<MediaUpload
 								onSelect={ handleMediaSelect }
@@ -160,14 +256,11 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								onClick={ () =>
 									setAttributes( { iconUrl: '' } )
 								}
-								variant="link"
+								variant=""
 								isDestructive
 								style={ { marginTop: '8px' } }
 							>
-								{ __(
-									'Remove Custom Icon',
-									'search-modal-block'
-								) }
+								{ __( 'Remove Icon', 'search-modal-block' ) }
 							</Button>
 						) }
 						{ error && (
@@ -175,12 +268,20 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								{ error }
 							</p>
 						) }
+					</ToolsPanelItem>
 
-						<div
-							className="search-modal-icon-size-control"
-							style={ { marginTop: '16px' } }
-						>
-							<p>{ __( 'Icon Size', 'search-modal-block' ) }</p>
+					<ToolsPanelItem
+						hasValue={ () => iconSize !== ICON_SIZE_OPTIONS.medium }
+						label={ __( 'Icon Size', 'search-modal-block' ) }
+						isShownByDefault
+						onDeselect={ () => {
+							setAttributes( {
+								iconSize: ICON_SIZE_OPTIONS.medium,
+							} );
+							setIsCustomSize( false );
+						} }
+					>
+						<div className="search-modal-icon-size-control">
 							<ButtonGroup style={ { marginBottom: '8px' } }>
 								<Button
 									isPrimary={ currentSizePreset === 'small' }
@@ -254,8 +355,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 								/>
 							) }
 						</div>
-					</div>
-				</PanelBody>
+					</ToolsPanelItem>
+				</ToolsPanel>
 			</InspectorControls>
 			<div { ...blockProps }>
 				<button className="wp-block-ph-search-modal__button">
