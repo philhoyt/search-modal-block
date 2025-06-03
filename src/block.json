@@ -32,6 +32,14 @@
 		"showLabel": {
 			"type": "boolean",
 			"default": false
+		},
+		"iconUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"iconSize": {
+			"type": "string",
+			"default": "1.5rem"
 		}
 	},
 	"textdomain": "search-modal-block",
