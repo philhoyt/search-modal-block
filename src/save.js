@@ -2,9 +2,22 @@ import { Icon, search } from '@wordpress/icons';
 import { useBlockProps } from '@wordpress/block-editor';
 
 export default function Save( { attributes } ) {
-	const { blockId, placeholderText, buttonText, labelText, showLabel } =
-		attributes;
+	const {
+		blockId,
+		placeholderText,
+		buttonText,
+		labelText,
+		showLabel,
+		iconUrl,
+		iconSize,
+	} = attributes;
 	const blockProps = useBlockProps.save();
+
+	// Icon style with the selected size
+	const iconStyle = {
+		width: iconSize,
+		height: iconSize,
+	};
 
 	return (
 		<div { ...blockProps }>
@@ -13,7 +26,16 @@ export default function Save( { attributes } ) {
 				data-micromodal-trigger={ blockId }
 				aria-label={ labelText }
 			>
-				<Icon icon={ search } />
+				{ iconUrl ? (
+					<img
+						src={ iconUrl }
+						alt={ labelText }
+						className="wp-block-ph-search-modal__custom-icon"
+						style={ iconStyle }
+					/>
+				) : (
+					<Icon icon={ search } style={ iconStyle } />
+				) }
 			</button>
 
 			<div
