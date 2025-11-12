@@ -35,3 +35,32 @@ function search_modal_block_init() {
 	register_block_type( __DIR__ . '/build' );
 }
 add_action( 'init', __NAMESPACE__ . '\\search_modal_block_init' );
+
+/**
+ * Filters the rendered block output to replace hardcoded form action URL
+ * with the correct WordPress home URL.
+ *
+ * This ensures the search form works correctly on:
+ * - WordPress installations in subdirectories
+ * - Multisite installations
+ * - Custom permalink structures
+ *
+ * @since 1.1.0
+ *
+ * @param string $block_content The block content about to be appended.
+ * @param array  $block         The full block, including name and attributes.
+ * @return string Modified block content.
+ */
+function search_modal_block_render( $block_content, $block ) {
+	// Only process our block.
+	if ( 'ph/search-modal' !== $block['blockName'] ) {
+		return $block_content;
+	}
+
+	// Replace hardcoded action="/" with the correct home URL.
+	$search_url = esc_url( home_url( '/' ) );
+	$block_content = str_replace( 'action="/"', 'action="' . $search_url . '"', $block_content );
+
+	return $block_content;
+}
+add_filter( 'render_block', __NAMESPACE__ . '\\search_modal_block_render', 10, 2 );
