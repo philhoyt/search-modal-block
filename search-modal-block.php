@@ -4,8 +4,8 @@
  * Plugin URI:        https://github.com/philhoyt/search-modal-block
  * Description:       Responsive search modal block.
  * Requires at least: 6.1
- * Requires PHP:      7.3
- * Version:           1.1.0
+ * Requires PHP:      7.4
+ * Version:           1.2.0
  * Author:            Phil Hoyt
  * Author URI:        https://philhoyt.com
  * License:           GPL-2.0-or-later
