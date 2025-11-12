@@ -1,3 +1,4 @@
+import { __ } from '@wordpress/i18n';
 import { Icon, search } from '@wordpress/icons';
 import { useBlockProps } from '@wordpress/block-editor';
 
@@ -55,9 +56,18 @@ export default function Save( { attributes } ) {
 						aria-labelledby={ `${ blockId }-title` }
 					>
 						<header className="wp-block-ph-search-modal__header">
+							<h2
+								id={ `${ blockId }-title` }
+								className="screen-reader-text"
+							>
+								{ labelText }
+							</h2>
 							<button
 								className="wp-block-ph-search-modal__close-button"
-								aria-label={ labelText }
+								aria-label={ __(
+									'Close search modal',
+									'search-modal-block'
+								) }
 								data-micromodal-close
 							></button>
 						</header>

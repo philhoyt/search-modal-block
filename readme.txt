@@ -2,8 +2,8 @@
 Contributors:      philhoyt
 Tags:              block, search, modal, search form, popup search
 Requires at least: 6.1
-Tested up to:      6.8.1
-Stable tag:        1.1.0
+Tested up to:      6.9
+Stable tag:        1.2.0
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -75,6 +75,11 @@ The build process uses @wordpress/scripts to compile and minify the JavaScript a
 The complete source code is available on GitHub: https://github.com/philhoyt/search-modal-block
 
 == Changelog ==
+
+= 1.2.0 =
+* WordPress 6.9
+* Fixed form action URL to work correctly on subdirectory and multisite installations
+* Improved accessibility with proper ARIA labels and modal title
 
 = 1.1.0 =
 * Added ability to upload custom icons for the search button

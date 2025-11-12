@@ -284,9 +284,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 						<div className="search-modal-icon-size-control">
 							<ButtonGroup style={ { marginBottom: '8px' } }>
 								<Button
-									isPrimary={ currentSizePreset === 'small' }
-									isSecondary={
-										currentSizePreset !== 'small'
+									variant={
+										currentSizePreset === 'small'
+											? 'primary'
+											: 'secondary'
 									}
 									onClick={ () =>
 										handleSizePresetClick( 'small' )
@@ -295,9 +296,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									{ __( 'S', 'search-modal-block' ) }
 								</Button>
 								<Button
-									isPrimary={ currentSizePreset === 'medium' }
-									isSecondary={
-										currentSizePreset !== 'medium'
+									variant={
+										currentSizePreset === 'medium'
+											? 'primary'
+											: 'secondary'
 									}
 									onClick={ () =>
 										handleSizePresetClick( 'medium' )
@@ -306,9 +308,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									{ __( 'M', 'search-modal-block' ) }
 								</Button>
 								<Button
-									isPrimary={ currentSizePreset === 'large' }
-									isSecondary={
-										currentSizePreset !== 'large'
+									variant={
+										currentSizePreset === 'large'
+											? 'primary'
+											: 'secondary'
 									}
 									onClick={ () =>
 										handleSizePresetClick( 'large' )
@@ -317,9 +320,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									{ __( 'L', 'search-modal-block' ) }
 								</Button>
 								<Button
-									isPrimary={ currentSizePreset === 'xlarge' }
-									isSecondary={
-										currentSizePreset !== 'xlarge'
+									variant={
+										currentSizePreset === 'xlarge'
+											? 'primary'
+											: 'secondary'
 									}
 									onClick={ () =>
 										handleSizePresetClick( 'xlarge' )
@@ -328,9 +332,10 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 									{ __( 'XL', 'search-modal-block' ) }
 								</Button>
 								<Button
-									isPrimary={ currentSizePreset === 'custom' }
-									isSecondary={
-										currentSizePreset !== 'custom'
+									variant={
+										currentSizePreset === 'custom'
+											? 'primary'
+											: 'secondary'
 									}
 									onClick={ () =>
 										handleSizePresetClick( 'custom' )
