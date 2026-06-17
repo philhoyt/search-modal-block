@@ -3,6 +3,7 @@ import './style.scss';
 
 import Edit from './edit';
 import save from './save';
+import deprecated from './deprecated';
 import metadata from './block.json';
 
 registerBlockType( metadata.name, {
@@ -15,4 +16,9 @@ registerBlockType( metadata.name, {
 	 * @see ./save.js
 	 */
 	save,
+
+	/**
+	 * @see ./deprecated.js
+	 */
+	deprecated,
 } );
