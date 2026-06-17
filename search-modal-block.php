@@ -58,7 +58,7 @@ function search_modal_block_render( $block_content, $block ) {
 	}
 
 	// Replace hardcoded action="/" with the correct home URL.
-	$search_url = esc_url( home_url( '/' ) );
+	$search_url    = esc_url( home_url( '/' ) );
 	$block_content = str_replace( 'action="/"', 'action="' . $search_url . '"', $block_content );
 
 	return $block_content;

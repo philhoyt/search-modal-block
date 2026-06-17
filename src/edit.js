@@ -101,12 +101,12 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					resetAll={ () => {
 						setAttributes( {
 							placeholderText: __(
-								'Search…',
+								'Search...',
 								'search-modal-block'
 							),
 							buttonText: __( 'Search', 'search-modal-block' ),
 							labelText: __(
-								'Open search',
+								'Search for:',
 								'search-modal-block'
 							),
 							showLabel: false,
@@ -116,14 +116,14 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					<ToolsPanelItem
 						hasValue={ () =>
 							placeholderText !==
-							__( 'Search…', 'search-modal-block' )
+							__( 'Search...', 'search-modal-block' )
 						}
 						label={ __( 'Placeholder Text', 'search-modal-block' ) }
 						isShownByDefault
 						onDeselect={ () =>
 							setAttributes( {
 								placeholderText: __(
-									'Search…',
+									'Search...',
 									'search-modal-block'
 								),
 							} )
@@ -170,14 +170,14 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					<ToolsPanelItem
 						hasValue={ () =>
 							labelText !==
-							__( 'Open search', 'search-modal-block' )
+							__( 'Search for:', 'search-modal-block' )
 						}
 						label={ __( 'Label Text', 'search-modal-block' ) }
 						isShownByDefault
 						onDeselect={ () =>
 							setAttributes( {
 								labelText: __(
-									'Open search',
+									'Search for:',
 									'search-modal-block'
 								),
 							} )
