@@ -67,10 +67,10 @@ The build process uses @wordpress/scripts to compile and minify the JavaScript a
 
 = Development Dependencies =
 
-* @wordpress/scripts: ^27.9.0
-* @wordpress/eslint-plugin: ^21.4.0
-* @wordpress/stylelint-config: ^21.41.0
-* eslint: ^8.57.1
+* @wordpress/scripts: ^32.4.1
+* @wordpress/eslint-plugin: ^25.4.1
+* @wordpress/stylelint-config: ^23.40.1
+* eslint: ^9.39.4
 
 The complete source code is available on GitHub: https://github.com/philhoyt/search-modal-block
 

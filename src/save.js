@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 import { Icon, search } from '@wordpress/icons';
 import { useBlockProps } from '@wordpress/block-editor';
 
-export default function Save( { attributes } ) {
+export default function Save({ attributes }) {
 	const {
 		blockId,
 		placeholderText,
@@ -21,27 +21,27 @@ export default function Save( { attributes } ) {
 	};
 
 	return (
-		<div { ...blockProps }>
+		<div {...blockProps}>
 			<button
 				className="wp-block-ph-search-modal__button"
-				data-micromodal-trigger={ blockId }
-				aria-label={ labelText }
+				data-micromodal-trigger={blockId}
+				aria-label={labelText}
 			>
-				{ iconUrl ? (
+				{iconUrl ? (
 					<img
-						src={ iconUrl }
-						alt={ labelText }
+						src={iconUrl}
+						alt={labelText}
 						className="wp-block-ph-search-modal__custom-icon"
-						style={ iconStyle }
+						style={iconStyle}
 					/>
 				) : (
-					<Icon icon={ search } style={ iconStyle } />
-				) }
+					<Icon icon={search} style={iconStyle} />
+				)}
 			</button>
 
 			<div
 				className="modal wp-block-ph-search-modal__fade"
-				id={ blockId }
+				id={blockId}
 				aria-hidden="true"
 			>
 				<div
@@ -53,27 +53,27 @@ export default function Save( { attributes } ) {
 						className="wp-block-ph-search-modal__container"
 						role="dialog"
 						aria-modal="true"
-						aria-labelledby={ `${ blockId }-title` }
+						aria-labelledby={`${blockId}-title`}
 					>
 						<header className="wp-block-ph-search-modal__header">
 							<h2
-								id={ `${ blockId }-title` }
+								id={`${blockId}-title`}
 								className="screen-reader-text"
 							>
-								{ labelText }
+								{labelText}
 							</h2>
 							<button
 								className="wp-block-ph-search-modal__close-button"
-								aria-label={ __(
+								aria-label={__(
 									'Close search modal',
 									'search-modal-block'
-								) }
+								)}
 								data-micromodal-close
 							></button>
 						</header>
 						<main
 							className="wp-block-ph-search-modal__content"
-							id={ `${ blockId }-content` }
+							id={`${blockId}-content`}
 						>
 							<form
 								method="GET"
@@ -84,26 +84,26 @@ export default function Save( { attributes } ) {
 									className={
 										showLabel ? '' : 'screen-reader-text'
 									}
-									htmlFor={ `${ blockId }-input` }
+									htmlFor={`${blockId}-input`}
 								>
-									{ labelText }
+									{labelText}
 								</label>
 								<div className="wp-block-ph-search-modal__form-controls">
 									<input
-										id={ `${ blockId }-input` }
+										id={`${blockId}-input`}
 										type="text"
 										name="s"
 										className="wp-block-ph-search-modal__form-input wp-block-search__input"
-										placeholder={ placeholderText }
+										placeholder={placeholderText}
 										required
 									/>
 									<div className="wp-block-button">
 										<button
 											type="submit"
 											className="wp-block-ph-search-modal__form-button wp-block-button__link"
-											style={ { cursor: 'pointer' } }
+											style={{ cursor: 'pointer' }}
 										>
-											{ buttonText }
+											{buttonText}
 										</button>
 									</div>
 								</div>

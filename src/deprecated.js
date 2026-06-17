@@ -21,31 +21,31 @@ const preCustomIcon = {
 		labelText: { type: 'string', default: 'Search for:' },
 		showLabel: { type: 'boolean', default: false },
 	},
-	migrate( attributes ) {
+	migrate(attributes) {
 		return {
 			...attributes,
 			iconUrl: '',
 			iconSize: '1.5rem',
 		};
 	},
-	save( { attributes } ) {
+	save({ attributes }) {
 		const { blockId, placeholderText, buttonText, labelText, showLabel } =
 			attributes;
 		const blockProps = useBlockProps.save();
 
 		return (
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<button
 					className="wp-block-ph-search-modal__button"
-					data-micromodal-trigger={ blockId }
-					aria-label={ labelText }
+					data-micromodal-trigger={blockId}
+					aria-label={labelText}
 				>
-					<Icon icon={ search } />
+					<Icon icon={search} />
 				</button>
 
 				<div
 					className="modal wp-block-ph-search-modal__fade"
-					id={ blockId }
+					id={blockId}
 					aria-hidden="true"
 				>
 					<div
@@ -57,18 +57,18 @@ const preCustomIcon = {
 							className="wp-block-ph-search-modal__container"
 							role="dialog"
 							aria-modal="true"
-							aria-labelledby={ `${ blockId }-title` }
+							aria-labelledby={`${blockId}-title`}
 						>
 							<header className="wp-block-ph-search-modal__header">
 								<button
 									className="wp-block-ph-search-modal__close-button"
-									aria-label={ labelText }
+									aria-label={labelText}
 									data-micromodal-close
 								></button>
 							</header>
 							<main
 								className="wp-block-ph-search-modal__content"
-								id={ `${ blockId }-content` }
+								id={`${blockId}-content`}
 							>
 								<form
 									method="GET"
@@ -81,26 +81,26 @@ const preCustomIcon = {
 												? ''
 												: 'screen-reader-text'
 										}
-										htmlFor={ `${ blockId }-input` }
+										htmlFor={`${blockId}-input`}
 									>
-										{ labelText }
+										{labelText}
 									</label>
 									<div className="wp-block-ph-search-modal__form-controls">
 										<input
-											id={ `${ blockId }-input` }
+											id={`${blockId}-input`}
 											type="text"
 											name="s"
 											className="wp-block-ph-search-modal__form-input wp-block-search__input"
-											placeholder={ placeholderText }
+											placeholder={placeholderText}
 											required
 										/>
 										<div className="wp-block-button">
 											<button
 												type="submit"
 												className="wp-block-ph-search-modal__form-button wp-block-button__link"
-												style={ { cursor: 'pointer' } }
+												style={{ cursor: 'pointer' }}
 											>
-												{ buttonText }
+												{buttonText}
 											</button>
 										</div>
 									</div>
@@ -126,7 +126,7 @@ const preAccessibleHeader = {
 		iconUrl: { type: 'string', default: '' },
 		iconSize: { type: 'string', default: '1.5rem' },
 	},
-	save( { attributes } ) {
+	save({ attributes }) {
 		const {
 			blockId,
 			placeholderText,
@@ -144,27 +144,27 @@ const preAccessibleHeader = {
 		};
 
 		return (
-			<div { ...blockProps }>
+			<div {...blockProps}>
 				<button
 					className="wp-block-ph-search-modal__button"
-					data-micromodal-trigger={ blockId }
-					aria-label={ labelText }
+					data-micromodal-trigger={blockId}
+					aria-label={labelText}
 				>
-					{ iconUrl ? (
+					{iconUrl ? (
 						<img
-							src={ iconUrl }
-							alt={ labelText }
+							src={iconUrl}
+							alt={labelText}
 							className="wp-block-ph-search-modal__custom-icon"
-							style={ iconStyle }
+							style={iconStyle}
 						/>
 					) : (
-						<Icon icon={ search } style={ iconStyle } />
-					) }
+						<Icon icon={search} style={iconStyle} />
+					)}
 				</button>
 
 				<div
 					className="modal wp-block-ph-search-modal__fade"
-					id={ blockId }
+					id={blockId}
 					aria-hidden="true"
 				>
 					<div
@@ -176,18 +176,18 @@ const preAccessibleHeader = {
 							className="wp-block-ph-search-modal__container"
 							role="dialog"
 							aria-modal="true"
-							aria-labelledby={ `${ blockId }-title` }
+							aria-labelledby={`${blockId}-title`}
 						>
 							<header className="wp-block-ph-search-modal__header">
 								<button
 									className="wp-block-ph-search-modal__close-button"
-									aria-label={ labelText }
+									aria-label={labelText}
 									data-micromodal-close
 								></button>
 							</header>
 							<main
 								className="wp-block-ph-search-modal__content"
-								id={ `${ blockId }-content` }
+								id={`${blockId}-content`}
 							>
 								<form
 									method="GET"
@@ -200,26 +200,26 @@ const preAccessibleHeader = {
 												? ''
 												: 'screen-reader-text'
 										}
-										htmlFor={ `${ blockId }-input` }
+										htmlFor={`${blockId}-input`}
 									>
-										{ labelText }
+										{labelText}
 									</label>
 									<div className="wp-block-ph-search-modal__form-controls">
 										<input
-											id={ `${ blockId }-input` }
+											id={`${blockId}-input`}
 											type="text"
 											name="s"
 											className="wp-block-ph-search-modal__form-input wp-block-search__input"
-											placeholder={ placeholderText }
+											placeholder={placeholderText}
 											required
 										/>
 										<div className="wp-block-button">
 											<button
 												type="submit"
 												className="wp-block-ph-search-modal__form-button wp-block-button__link"
-												style={ { cursor: 'pointer' } }
+												style={{ cursor: 'pointer' }}
 											>
-												{ buttonText }
+												{buttonText}
 											</button>
 										</div>
 									</div>
@@ -233,6 +233,6 @@ const preAccessibleHeader = {
 	},
 };
 
-const deprecated = [ preCustomIcon, preAccessibleHeader ];
+const deprecated = [preCustomIcon, preAccessibleHeader];
 
 export default deprecated;
