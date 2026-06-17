@@ -14,7 +14,13 @@
 		"lint": "npm run lint:css && npm run lint:js && npm run lint:scss",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start"
+		"start": "wp-scripts start",
+		"test:unit": "wp-scripts test-unit-js",
+		"test:e2e": "wp-scripts test-playwright",
+		"env:start": "wp-env start",
+		"env:stop": "wp-env stop",
+		"env:clean": "wp-env clean",
+		"test:php": "wp-env run tests-cli --env-cwd wp-content/plugins/search-modal-block -- vendor/bin/phpunit"
 	},
 	"files": [
 		"build",
@@ -25,6 +31,7 @@
 		"src"
 	],
 	"devDependencies": {
+		"@wordpress/env": "^11.8.1",
 		"@wordpress/eslint-plugin": "^21.4.0",
 		"@wordpress/scripts": "^27.9.0",
 		"@wordpress/stylelint-config": "^21.41.0",
