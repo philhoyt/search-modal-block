@@ -1,26 +1,42 @@
 {
 	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
-	"landingPage": "/",
+	"meta": {
+		"title": "Search Modal Block",
+		"description": "Responsive search modal block.",
+		"author": "philhoyt",
+		"categories": [ "blocks" ]
+	},
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
 	"login": true,
+	"landingPage": "/",
 	"steps": [
 		{
-			"step": "setSiteOptions",
-			"options": {
-				"blogname": "Search Modal Block"
-			}
-		},
-		{
 			"step": "installPlugin",
-			"pluginZipFile": {
+			"pluginData": {
 				"resource": "url",
-				"url": "https://github-proxy.com/proxy/?repo=philhoyt/search-modal-block&branch=main"
+				"url": "https://github.com/philhoyt/search-modal-block/releases/latest/download/search-modal-block.zip"
+			},
+			"options": {
+				"activate": true
 			}
 		},
 		{
 			"step": "installTheme",
-			"themeZipFile": {
+			"themeData": {
 				"resource": "wordpress.org/themes",
 				"slug": "twentytwentyfour"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "Search Modal Block Demo"
 			}
 		},
 		{

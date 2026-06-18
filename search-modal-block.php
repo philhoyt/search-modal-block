@@ -5,7 +5,7 @@
  * Description:       Responsive search modal block.
  * Requires at least: 6.1
  * Requires PHP:      7.4
- * Version:           1.2.0
+ * Version:           1.3.0
  * Author:            Phil Hoyt
  * Author URI:        https://philhoyt.com
  * License:           GPL-2.0-or-later
@@ -58,7 +58,7 @@ function search_modal_block_render( $block_content, $block ) {
 	}
 
 	// Replace hardcoded action="/" with the correct home URL.
-	$search_url = esc_url( home_url( '/' ) );
+	$search_url    = esc_url( home_url( '/' ) );
 	$block_content = str_replace( 'action="/"', 'action="' . $search_url . '"', $block_content );
 
 	return $block_content;
