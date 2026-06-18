@@ -1,29 +1,39 @@
-# Directories and files that should not ship in the plugin zip.
+# Files and directories excluded from the WordPress.org SVN deploy and the
+# release zip. What ships: build/, assets/, src/, search-modal-block.php,
+# readme.txt. (src/ is shipped intentionally as the source for build/.)
 
-/.claude
+# Version control / CI / editor
 /.git
 /.github
-/.vscode
-/_playground
-/docs
-/node_modules
-/src
-/tests
-/vendor
-
-/.distignore
-/.editorconfig
-/.eslintrc.json
 /.gitignore
-/.phpcs.xml
-/.stylelintrc.json
+/.claude
+/.vscode
+/.editorconfig
+
+# Tooling config
+/.distignore
 /.wp-env.json
-/AUDIT.md
-/RELEASE.md
+/.stylelintrc.json
+/eslint.config.js
+/jest.config.js
+/phpstan.neon
+/phpunit.xml
 /composer.json
 /composer.lock
 /package.json
 /package-lock.json
-/phpstan.neon
-/phpunit.xml
+
+# Dev-only directories
+/node_modules
+/vendor
+/tests
+/docs
+/_playground
+
+# Test files shipped under src/
+*.test.js
+
+# GitHub-only docs and build artifacts
+/readme.md
+/RELEASE.md
 /search-modal-block.zip
