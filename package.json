@@ -45,6 +45,6 @@
 	},
 	"dependencies": {
 		"@wordpress/icons": "^10.5.0",
-		"micromodal": "^0.4.10"
+		"micromodal": "^0.7.0"
 	}
 }

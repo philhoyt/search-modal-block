@@ -91,7 +91,7 @@ export default function Save({ attributes }) {
 								<div className="wp-block-ph-search-modal__form-controls">
 									<input
 										id={`${blockId}-input`}
-										type="text"
+										type="search"
 										name="s"
 										className="wp-block-ph-search-modal__form-input wp-block-search__input"
 										placeholder={placeholderText}
