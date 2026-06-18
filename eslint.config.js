@@ -16,4 +16,13 @@ module.exports = [
 			},
 		},
 	},
+	{
+		// Jest globals for unit tests.
+		files: ['**/*.test.js'],
+		languageOptions: {
+			globals: {
+				...globals.jest,
+			},
+		},
+	},
 ];
