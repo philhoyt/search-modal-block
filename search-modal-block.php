@@ -5,7 +5,7 @@
  * Description:       Responsive search modal block.
  * Requires at least: 6.1
  * Requires PHP:      7.4
- * Version:           1.2.0
+ * Version:           1.3.0
  * Author:            Phil Hoyt
  * Author URI:        https://philhoyt.com
  * License:           GPL-2.0-or-later
