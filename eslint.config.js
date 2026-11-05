@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const wpPlugin = require('@wordpress/eslint-plugin');
 const globals = require('globals');
+const jestPlugin = require('eslint-plugin-jest');
 /* eslint-enable import/no-extraneous-dependencies */
 
 module.exports = [
@@ -16,13 +17,10 @@ module.exports = [
 			},
 		},
 	},
+	// The unit suite stays on Jest (wp-scripts test-unit-jest); the default
+	// test override in @wordpress/eslint-plugin 27+ targets Vitest instead.
 	{
-		// Jest globals for unit tests.
-		files: ['**/*.test.js'],
-		languageOptions: {
-			globals: {
-				...globals.jest,
-			},
-		},
+		...jestPlugin.configs['flat/recommended'],
+		files: ['src/**/*.test.js'],
 	},
 ];
