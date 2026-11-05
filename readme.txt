@@ -3,7 +3,7 @@ Contributors:      philhoyt
 Tags:              block, search, modal, search form, popup search
 Requires at least: 6.1
 Tested up to:      7.1
-Stable tag:        1.3.0
+Stable tag:        1.3.1
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -75,6 +75,9 @@ The build process uses @wordpress/scripts to compile and minify the JavaScript a
 The complete source code is available on GitHub: https://github.com/philhoyt/search-modal-block
 
 == Changelog ==
+
+= 1.3.1 =
+* Change: Tested up to WordPress 7.1.
 
 = 1.3.0 =
 * Changed the search field to type="search" for the native clear control and more accurate semantics
