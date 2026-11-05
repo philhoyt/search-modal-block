@@ -16,6 +16,8 @@
 /.stylelintrc.json
 /eslint.config.js
 /jest.config.js
+/jest.config.cjs
+/.phpcs.xml
 /phpstan.neon
 /phpunit.xml
 /composer.json
@@ -37,3 +39,6 @@
 /readme.md
 /RELEASE.md
 /search-modal-block.zip
+
+# Written by the release workflow before the SVN deploy step
+/changelog_body.txt
