@@ -8,105 +8,77 @@ Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A customizable search modal block that adds an elegant and accessible search experience to your WordPress site.
+A block that shows a search icon and opens the site search form in a modal dialog when clicked
 
 == Description ==
 
-The Search Modal Block enhances your WordPress site with a modern, popup search interface that's both beautiful and functional. Built specifically for the block editor (Gutenberg), it provides a seamless way to add search functionality to any part of your content.
+Search Modal Block adds one block, Search Modal Block, to the inserter. On the page it renders a button with a search icon. Clicking the button opens a modal with a standard WordPress search form that submits to your site's search results.
 
-**Key Features:**
+In the block inspector you can set:
 
-* Clean, minimal design that works with any theme
-* Fully responsive layout
-* Accessibility-ready with ARIA labels and keyboard navigation
-* Customizable text elements:
-  * Search input placeholder
-  * Search button text
-  * Screen reader labels
-* Focus-visible support for better keyboard navigation
-* Seamless integration with WordPress search
+* The placeholder text in the search field.
+* The text on the submit button.
+* The label text, which is read by screen readers and can also be shown above the field.
+* The button icon: the default magnifying glass, or an image from the media library.
+* The icon size: S, M, L, XL, or a custom value in px, em, rem, or %.
 
-**Perfect For:**
+The modal is a `role="dialog"` with `aria-modal`, a title for assistive technology, and a close button. Opening it moves focus into the dialog and locks page scrolling; Escape and the overlay close it. The form uses the theme's `wp-block-search` and `wp-block-button__link` classes, so it picks up the same styling as the core Search and Buttons blocks.
 
-* Minimalist themes needing an elegant search solution
-* Sites wanting to improve their search UX
-* Accessibility-focused websites
-* Any WordPress site using the block editor
+The front-end script (MicroModal plus the init call, about 3 KB gzipped) loads only on pages that contain the block. The stylesheet is page-scoped on block themes; classic themes load every registered block's styles on every page.
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/` directory, or install the plugin through the WordPress plugins screen directly.
-2. Activate the plugin through the 'Plugins' screen in WordPress.
-3. Go to the block editor and search for "Search Modal Block" in the block inserter to add it to your content.
+1. Install from Plugins > Add New by searching for "Search Modal Block", or upload the plugin folder to `/wp-content/plugins/`.
+2. Activate the plugin on the Plugins screen.
+3. In the editor, add the Search Modal Block to a header, navigation area, or any other content.
 
 == Frequently Asked Questions ==
 
-= How do I customize the search button appearance? =
+= How do I style the button and the form? =
 
-The search button inherits your theme's colors by default. You can customize its appearance using your theme's custom CSS or the WordPress site editor.
+The trigger button inherits your theme's button colours. The form reuses the `wp-block-search__input` and `wp-block-button__link` classes, so theme.json styles for the Search and Buttons blocks apply to it. For anything else, target the `wp-block-ph-search-modal__*` classes in your theme's CSS.
+
+= Does it work on a subdirectory or multisite install? =
+
+Yes. The form action is rewritten on render to the site's `home_url()`, so the search goes to the right site.
+
+= Will updating break blocks I added with an older version? =
+
+No. The block carries deprecations for the 1.0.0, 1.1.0, and 1.2.0 markup, so older blocks are migrated when the post is next opened in the editor and keep rendering on the front end until then.
 
 == Screenshots ==
 
-1. The search modal block in the block editor with customizable settings.
-2. The search modal displayed on the frontend after being triggered by the search icon.
-
-== Development ==
-
-This block is built using the WordPress Create Block tool, ensuring compatibility with modern WordPress standards and practices. The source code is available in the plugin's `/src` directory.
-
-= Building from Source =
-
-To build the plugin from source:
-
-1. Clone the repository
-2. Install dependencies with `npm install`
-3. Run `npm run build` to build the production files
-4. For development, use `npm run start` to start the development server
-
-The build process uses @wordpress/scripts to compile and minify the JavaScript and CSS files. The source code for the compiled files in the `/build` directory can be found in the `/src` directory.
-
-= Development Dependencies =
-
-* @wordpress/scripts: ^32.4.1
-* @wordpress/eslint-plugin: ^25.4.1
-* @wordpress/stylelint-config: ^23.40.1
-* eslint: ^9.39.4
-
-The complete source code is available on GitHub: https://github.com/philhoyt/search-modal-block
+1. The block's settings in the editor.
+2. The open search modal on the front end.
 
 == Changelog ==
 
 = 1.3.1 =
-* Change: Tested up to WordPress 7.1.
+* Tested up to WordPress 7.1.
 
 = 1.3.0 =
-* Changed the search field to type="search" for the native clear control and more accurate semantics
-* Added block deprecations so blocks added in earlier versions keep working after updating
-* Updated MicroModal to 0.7.0
-* Tested up to WordPress 7.0
+* Changed the search field to `type="search"` for the native clear control.
+* Added block deprecations so blocks added with earlier versions keep working after an update.
+* Updated MicroModal to 0.7.0.
+* Tested up to WordPress 7.0.
 
 = 1.2.0 =
-* WordPress 6.9
-* Fixed form action URL to work correctly on subdirectory and multisite installations
-* Improved accessibility with proper ARIA labels and modal title
+* Tested up to WordPress 6.9.
+* Fixed the form action URL on subdirectory and multisite installations.
+* Added a modal title and ARIA labels for the dialog and close button.
 
 = 1.1.0 =
-* Added ability to upload custom icons for the search button
-* Added icon size controls with preset sizes (S, M, L, XL) and custom size option
+* Added a custom icon option that takes an image from the media library.
+* Added icon size controls with S, M, L, and XL presets and a custom size.
 
 = 1.0.1 =
-* Include assets for .org
-* Include src for .org
+* Added the WordPress.org assets and the `src` directory to the release.
 
 = 1.0.0 =
-* Initial release with search modal block functionality
-* Customizable placeholder text, button text, and label text
-* Responsive and accessible design
-* Integration with WordPress search functionality
-* Focus-visible support for enhanced keyboard navigation
+* Initial release.
+* Added placeholder, button text, and label text settings.
+* Added focus-visible styles for keyboard users.
 
 == Credits ==
 
-This plugin uses the following third-party libraries:
-
-* [MicroModal](https://micromodal.vercel.app/) - A lightweight, configurable modal library for web applications.
+The modal is driven by [MicroModal](https://micromodal.vercel.app/), a small modal library released under the ISC license.
