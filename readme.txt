@@ -2,8 +2,8 @@
 Contributors:      philhoyt
 Tags:              block, search, modal, search form, popup search
 Requires at least: 6.1
-Tested up to:      7.1
-Stable tag:        1.3.1
+Tested up to:      7.2
+Stable tag:        1.3.2
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -52,6 +52,10 @@ No. The block carries deprecations for the 1.0.0, 1.1.0, and 1.2.0 markup, so ol
 2. The open search modal on the front end.
 
 == Changelog ==
+
+= 1.3.2 =
+* Tested up to WordPress 7.2.
+* Rewrote the plugin description and FAQ in plain English.
 
 = 1.3.1 =
 * Tested up to WordPress 7.1.

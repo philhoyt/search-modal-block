@@ -1,7 +1,7 @@
 # Search Modal Block
 
 [![CI](https://github.com/philhoyt/search-modal-block/actions/workflows/ci.yml/badge.svg)](https://github.com/philhoyt/search-modal-block/actions/workflows/ci.yml)
-[![Playground Demo Link](https://img.shields.io/badge/Playground_Demo-v1.3.1-blue?logo=wordpress&logoColor=%23fff&labelColor=%233858e9&color=%233858e9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/search-modal-block/main/_playground/blueprint.json)
+[![Playground Demo Link](https://img.shields.io/badge/Playground_Demo-v1.3.2-blue?logo=wordpress&logoColor=%23fff&labelColor=%233858e9&color=%233858e9)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/philhoyt/search-modal-block/main/_playground/blueprint.json)
 
 A block that shows a search icon and opens the site search form in a modal dialog when clicked.
 
@@ -74,7 +74,7 @@ CI (`.github/workflows/ci.yml`) runs phpcs and phpstan on PHP 7.4, 8.1, 8.2, and
 Bump `Version` in `search-modal-block.php`, `version` in `package.json` and `src/block.json`, and `Stable tag` in `readme.txt`, add a changelog entry, then push a bare version tag with no `v` prefix:
 
 ```bash
-git tag 1.3.1 && git push origin 1.3.1
+git tag 1.3.2 && git push origin 1.3.2
 ```
 
 The deploy workflow (`.github/workflows/release.yml`) only matches tags of the form `[0-9]+.[0-9]+.[0-9]+`. It builds the assets, pushes the plugin to WordPress.org SVN with `10up/action-wordpress-plugin-deploy` (honouring `.distignore`), then creates a GitHub release with the generated zip and the matching `= X.Y.Z =` block from `readme.txt` as the notes. Two older tags (`V1.0.0`, `v1.2.0`) predate the bare format.
